@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button Page</title>
+    <style>
+        /* 设置按钮样式 */
+        .button {
+            width: 120px;
+            height: 60px;
+            margin: 20px; /* 调整按钮之间的间距 */
+            color: #FFF;
+            background: #6b7184;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position-x: center;
+            background-image: url(https://file.51pptmoban.com/d/file/2014/05/13/d12562dabc94ff6130521134133b5d3d.jpg);
+        }
+
+        button:hover {
+            width: 120px;
+            height: 60px;
+            font-size: 18px;
+            font-weight: bold;
+            background: #6b7184;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<!-- 按钮容器 -->
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <!-- 按钮一 -->
+    <button class="button" id="button1">下载视频墙<br>GEM</button>
+    <!-- 按钮二 -->
+    <button class="button" id="button2">下载图片墙</button>
+</div>
+<script>
+    // 获取按钮元素
+    const button1 = document.getElementById('button1');
+    const button2 = document.getElementById('button2');
+
+    // 给按钮一添加点击事件
+    button1.addEventListener('click', () => {
+        // 创建一个虚拟链接
+        let link = document.createElement('a');
+        link.href = 'GEM.html'; // 文件路径
+
+        // 设置下载文件的名称
+        link.download = 'GEM.html';
+        link.click();
+    });
+
+    // 给按钮二添加点击事件
+    button2.addEventListener('click', () => {
+        // 创建一个虚拟链接
+        let link = document.createElement('a');
+        link.href = 'pictures.html'; // 文件路径
+
+        // 设置下载文件的名称
+        link.download = 'pictures.html';
+        link.click();
+    });
+</script>
+</body>
+</html>

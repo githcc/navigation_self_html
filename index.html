@@ -52,8 +52,8 @@
                        title="在当前页打开 https://119.91.23.137/ccgpt.html">CC Room</a>
                 </div>
                 <div class="col-xs-4">
-                    <a class="link-list-a" href="https://119.91.23.137/GEM.html" download
-                       title="点击下载文件 GEM.html">GEM</a>
+                    <a class="link-list-a" href="#"
+                       title="在当前页打开 https://119.91.23.137/fda.html">下载</a>
                 </div>
                 <div class="col-xs-4">
                     <a class="link-list-a" href="#"
@@ -173,8 +173,6 @@
             let title = link.querySelector("a").getAttribute("title");
             if (title.startsWith("在当前页打开")) {
                 iframe.src = title.replace("在当前页打开", "");
-            }else{
-                iframe.src = 'https://119.91.23.137/cdn/download.html'
             }
         });
     }
