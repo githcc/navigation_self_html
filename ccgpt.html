@@ -28,7 +28,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position-x: center;
-            background-image: url(https://file.51pptmoban.com/d/file/2014/05/13/d12562dabc94ff6130521134133b5d3d.jpg);
+            background-image: url(https://119.91.23.137/cdn/d12562dabc94ff6130521134133b5d3d.jpg);
         }
 
         .loading-screen {
@@ -112,7 +112,7 @@
             sendMessagesForGemini: {}, // 发生给gemini的信息
             sendMessagesBakForGemini: {contents: []},
             content: {},
-            newMessage: '单击输入问题，回车发送问题，帮助请输入/h ',
+            newMessage: '单击输入问题，回车发送问题',
             newMessageBak: '',
             model: 'gpt-3.5-turbo-1106', // 模型
             api: 'https://api.openai-proxy.com', // 代理接口有条件使用 https://api.openai.com
@@ -127,10 +127,10 @@
             search: '联网搜索：',// 联网标识
             engine: '搜索引擎：',// 搜索引擎标识
             draw: '绘画：',// 画图标识
-            help: '1. 单击输入问题，回车发送问题，双击新建会话 \n\n'
+            help: '1. 单击输入问题，回车发送问题，双击新建会话 \n\n',
                 // + '1. 输入/n前缀(net)进行联网，目前使用的是yandex搜索引擎，ctrl+点击数字进行访问 \n\n'
                 // + '1. 输入/i前缀(img)进行绘画，目前使用的是dall-e-3模型 \n\n'
-                + '1. 输入/g前缀(gemini)进行使用gemini \n\n',
+                // + '1. 输入/g前缀(gemini)进行使用gemini \n\n'
             pre: ''
         },
         created() {
@@ -171,12 +171,12 @@
                         return;
                     }
                     document.querySelector('input').disabled = true;
-                    if (this.newMessage.startsWith('/g')) {
-                        this.pre = '/g ';
-                        this.newMessage = this.newMessage.replace('/g ', '').replace('/g', '');
-                        this.messages.push({text: this.user + this.newMessage, sender: 'user'});
-                        this.replyGemini(this.newMessage);
-                    }
+                    // if (this.newMessage.startsWith('/g')) {
+                    //     this.pre = '/g ';
+                    //     this.newMessage = this.newMessage.replace('/g ', '').replace('/g', '');
+                    //     this.messages.push({text: this.user + this.newMessage, sender: 'user'});
+                    //     this.replyGemini(this.newMessage);
+                    // }
                     // else if (this.newMessage.startsWith('/i')) {
                     //     this.pre = '/i ';
                     //     this.newMessage = this.newMessage.replace('/i ', '').replace('/i', '');
@@ -188,11 +188,11 @@
                     //     this.messages.push({text: this.search + this.newMessage, sender: 'user'});
                     //     this.replyStream1();
                     // }
-                    else {
+                    // else {
                         this.messages.push({text: this.user + this.newMessage, sender: 'user'});
                         this.sendMessages.push({'role': 'user', 'content': this.newMessage});
                         this.replyStream2();
-                    }
+                    // }
                     this.newMessage = '请耐心等待回复';
                 }
             },

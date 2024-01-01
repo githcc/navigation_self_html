@@ -37,9 +37,11 @@
     item.oncontextmenu = function () {
       return false;
     }
-    // 禁用键盘
+    // 禁用F12
     item.onkeydown = function (e) {
-      e.preventDefault();
+      if (e.keyCode === 123) { // F12 的 keyCode
+        e.preventDefault();
+      }
     };
   }
   // 渲染视频列表

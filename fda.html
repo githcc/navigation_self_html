@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Button Page</title>
+    <meta http-equiv="content-type" content="Cache-Control: no-cache, no-store, must-revalidate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1">
     <style>
         /* 设置按钮样式 */
         .button {
             width: 120px;
             height: 60px;
             margin: 20px; /* 调整按钮之间的间距 */
-            color: #FFF;
-            background: #6b7184;
             border: none;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            color: #6b7184;
+            font-weight: bold;
+            background: #FFF;
+            text-decoration: none;
         }
 
         body {
@@ -22,7 +26,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position-x: center;
-            background-image: url(https://file.51pptmoban.com/d/file/2014/05/13/d12562dabc94ff6130521134133b5d3d.jpg);
+            /*background-image: url(https://119.91.23.137/cdn/d12562dabc94ff6130521134133b5d3d.jpg);*/
         }
 
         button:hover {
@@ -30,18 +34,23 @@
             height: 60px;
             font-size: 18px;
             font-weight: bold;
-            background: #6b7184;
             text-decoration: none;
+            background: #6b7184;
+            color: #FFF;
+            transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease; /* Firefox 4 */
+            -webkit-transition: all 0.3s ease; /* Safari 和 Chrome */
+            -o-transition: all 0.3s ease; /* Opera */
         }
     </style>
 </head>
 <body>
 <!-- 按钮容器 -->
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+<div style="display: flex; justify-content: center; align-items: center; ">
     <!-- 按钮一 -->
     <button class="button" id="button1">下载视频墙<br>GEM</button>
     <!-- 按钮二 -->
-    <button class="button" id="button2">下载图片墙</button>
+    <button class="button" id="button2">下载图片墙<br>8K</button>
 </div>
 <script>
     // 获取按钮元素

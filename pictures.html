@@ -32,6 +32,20 @@
 <script src="https://119.91.23.137/cdn/data_img.js"></script>
 
   <script>
+    ban(document);
+    function ban(item) {
+      // 禁用鼠标右键
+      item.oncontextmenu = function () {
+        return false;
+      }
+      // 禁用F12
+      item.onkeydown = function (e) {
+        if (e.keyCode === 123) { // F12 的 keyCode
+          e.preventDefault();
+        }
+      };
+    }
+
 	imagePaths = shuffleArray(imagePaths);
 
     const imageWall = document.getElementById('imageWall');
